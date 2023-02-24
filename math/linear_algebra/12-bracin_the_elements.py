@@ -3,7 +3,7 @@
 
 
 def np_elementwise(mat1, mat2):
-    """returns tuple containing element-wise sum, difference, product, quotient"""
+    """returns tuple containing element-wise operations"""
     result = []
     result.append(mat1 + mat2)
     result.append(mat1 - mat2)
