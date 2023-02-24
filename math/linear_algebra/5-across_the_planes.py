@@ -3,7 +3,7 @@
 
 
 def add_matrices2D(mat1, mat2):
-    """check if mat1 and mat2 does not have the same shape else return the sum"""
+    """check if we can add the mat,then return the sum"""
     if len(mat1) != len(mat2):
         return None
     if len(mat1[0]) != len(mat2[0]):
@@ -15,4 +15,3 @@ def add_matrices2D(mat1, mat2):
             row.append(mat1[i][j] + mat2[i][j])
         mat.append(row)
     return mat
-    
