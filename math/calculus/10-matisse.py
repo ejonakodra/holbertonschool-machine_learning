@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
+"""function return the derivate of a polynom"""
+
 
 def poly_derivative(poly):
-        if type(poly) is not list or len(poly) < 1:
-                    return None
-                    for coefficient in poly:
-                                if type(coefficient) is not int and type(coefficient) is not float:
-                                                return None
-                                                for power, coefficient in enumerate(poly):
-                                                            if power is 0:
-                                                                            derivative = [0]
-                                                                                        continue
-                                                                                            if power is 1:
-                                                                                                            derivative = []
-                                                                                                                    derivative.append(power * coefficient)
-                                                                                                                        while derivative[-1] is 0 and len(derivative) > 1:
-                                                                                                                                    derivative = derivative[:-1]
-                                                                                                                                        
+    """"check if poly is valid then find the derivate"""
+    if(type(poly) is not list or poly == []):
+        return None
+    elif len(poly) <2:
+        return [0]
+    else:
+        derivative = poly.copy()
+        exponent = 1
+        derivative.pop(0)
+    for i in range(len(derivative)):
+        derivative[i] = derivative[i] * exponent
+        exponent += 1
+    return derivative
