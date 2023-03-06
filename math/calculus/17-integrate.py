@@ -2,9 +2,9 @@
 """"function find the integral of a poly"""
 
 
-def poly_integral(poly, C = 0):
+def poly_integral(poly, C=0):
     """check if poly and c ar valid"""
-    if type(poly) is not list or len(poly)== 0:
+    if type(poly) is not list or len(poly) == 0:
         return None
     elif type(C) is int:
         if poly == [0]:
