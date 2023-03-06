@@ -18,5 +18,5 @@ def poly_integral(poly, C=0):
                 integral[i] = int(number) if number % 1 == 0 else number
             else:
                 return None
-        integral.insert(0,C)
+        integral.insert(0, C)
         return integral
