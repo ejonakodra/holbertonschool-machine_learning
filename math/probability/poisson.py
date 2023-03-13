@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" Poisson class represents Poisson distribution """
+""" Poisson class represents Poisson distribution"""
 
 
 class Poisson:
