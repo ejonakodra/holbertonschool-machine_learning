@@ -8,7 +8,7 @@ class Poisson:
     def __init__(self, data=None, lambtha=1.):
         """initialize lambda, 
         if data is given use the lambtha is it is positive
-        if is not given, validate data and calculate lambtha """
+        if is not given, validate data and calculate lambtha"""
         if data is None:
             if lambtha < 1:
                 raise ValueError("lambtha must be a positive value")
