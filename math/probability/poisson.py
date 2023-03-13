@@ -37,7 +37,7 @@ class Poisson:
         return pmf
 
     def cdf(self, k):
-    """calculates the value of the CDF for a given number of successes k"""
+        """calculates the value of the CDF for a given number of successes k"""
         if type(k) is not int:
             k = int(k)
         if k < 0:
