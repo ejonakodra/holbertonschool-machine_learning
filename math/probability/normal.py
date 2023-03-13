@@ -8,10 +8,10 @@ class Normal:
         """initialize lambda, as 1/mean in exp disttribution """
         if data is None:
             if stddev < 1:
-                raise TypeError("stddev must be a positive value")
+                raise ValueError("stddev must be a positive value")
             else:
-                self.mean = float(mean)
                 self.stddev = float(stddev)
+                self.mean = float(mean)
         else:
             if type(data) is not list:
                 raise TypeError("data must be a list")
@@ -22,5 +22,6 @@ class Normal:
                 self.mean = mean
                 sum_data = 0
                 for i in data:
-                    sum_data += float((i - self.mean) ** 2)
-                    self.stddev = sum_data/len(data)
+                    sum_data += ((i - mean) ** 2)
+                stddev = (sum_data / len(data)) ** (1 / 2)
+                self.stddev = stddev
