@@ -19,3 +19,11 @@ class Exponential:
             else:
                 lambtha = float(len(data) / sum(data))
                 self.lambtha = lambtha
+
+    def pdf(self, x):
+        """calculates the value of the PMF"""
+        if x < 0:
+            return 0
+        e = 2.7182818285
+        pdf = self.lambtha * (e**(-self.lambtha*x))
+        return pdf
