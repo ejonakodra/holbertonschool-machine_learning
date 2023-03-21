@@ -12,7 +12,7 @@ def convolve_grayscale_padding(images, kernel, padding):
     kh, kw = kernel.shape
     ph, pw = padding
     images = np.pad(images, ((0, 0), (ph, ph), (pw, pw)),
-                    'constant', constant_values = 0)
+                    'constant', constant_values=0)
     ch = height + (2*ph) - kh + 1
     cw = width + (2*pw) - kw + 1
     convoluted = np.zeros((m, ch, cw))
