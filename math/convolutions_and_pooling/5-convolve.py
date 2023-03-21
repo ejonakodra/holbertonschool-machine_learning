@@ -24,7 +24,7 @@ def convolve(images, kernel, padding='same', stride=(1, 1)):
                         'constant', constant_values=0)
     ch = ((height + (2 * ph) - kh) // sh) + 1
     cw = ((width + (2 * pw) - kw) // sw) + 1
-        convoluted = np.zeros((m, ch, cw, nc))
+    convoluted = np.zeros((m, ch, cw, nc))
     for index in range(nc):
         kernel_index = kernel[:, :, :, index]
         i = 0
