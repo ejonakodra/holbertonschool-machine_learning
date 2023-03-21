@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Function performs a convolution on a grayscale image 
+"""Function performs a convolution on a grayscale image
 with given padding and stride"""
 
 
