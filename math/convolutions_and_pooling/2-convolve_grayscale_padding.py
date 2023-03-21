@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """Function performs convoultion on a grayscale image with custom padding"""
 
+
 import numpy as np
 
 
 def convolve_grayscale_padding(images, kernel, padding):
-    """Function performs convolution on a grayscale image with custom padding"""
+    """Function performs convolution on a grayscale image 
+    with custom padding"""
     m, height, width = images.shape
     kh, kw = kernel.shape
     ph, pw = padding
