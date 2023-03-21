@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
-"""Function performs a convolution on a grayscale image with given padding and stride"""
+"""Function performs a convolution on a grayscale image 
+with given padding and stride"""
+
 
 import numpy as np
 
 
 def convolve_grayscale(images, kernel, padding='same', stride=(1, 1)):
-    """Performs a convolution on grayscale images using specific padding and stride"""
+    """Performs a convolution on grayscale images
+    using specific padding and stride"""
     m = images.shape[0]
     height = images.shape[1]
     width = images.shape[2]
