@@ -1,4 +1,4 @@
-#!/bin/env
+#!/usr/bin/env python3
 """Function performs convoultion on a grayscale image with custom padding"""
 
 import numpy as np
