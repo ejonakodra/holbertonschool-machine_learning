@@ -18,7 +18,7 @@ class Neuron:
         self.__W = np.random.randn(1, nx)
         self.__b = 0
         self.__A = 0
-        
+
     @property
     def W(self):
         return (self.__W)
@@ -38,7 +38,8 @@ class Neuron:
         return (self.A)
 
     def cost(self, Y, A):
-        """calculates the cost of the model using logistic regression function:"""
+        """calculates the cost of the model
+        using logistic regression function:"""
         m = Y.shape[1]
         m_loss = np.sum((Y * np.log(A)) + ((1 - Y) * np.log(1.0000001 - A)))
         cost = (1 / m) * (-(m_loss))
