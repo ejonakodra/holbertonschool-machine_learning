@@ -2,6 +2,8 @@
 """Defines Neuron class that definesa single neuron performing binary classification"""
 
 
+import numpy as np
+
 class Neuron:
     """class that represents a single neuron performing binary classification"""
     def __init__(self, nx):
