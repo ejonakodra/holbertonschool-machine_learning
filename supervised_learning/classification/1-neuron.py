@@ -22,11 +22,9 @@ class Neuron:
     @property
     def W(self):
         return (self.__W)
-    
     @property
     def b(self):
         return (self.__b)
-
     @property
     def A(self):
         return (self.__A)
