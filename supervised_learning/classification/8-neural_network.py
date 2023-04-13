@@ -19,7 +19,7 @@ class NeuralNetwork:
         if type(nodes) is not int:
             raise TypeError("nodes must be an integer")
         if nodes < 1:
-            raise ValueError("nodes must be a positive integer")     
+            raise ValueError("nodes must be a positive integer")
         # nodes number of nodes and receives nx number of input feature
         self.W1 = np.random.randn(nodes, nx)
         # matches the shape of the hidden layer output
