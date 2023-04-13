@@ -63,7 +63,7 @@ class Neuron:
         self.__W = self.W - (alpha * d__W)
         self.__b = self.b - (alpha * d__b)
 
-       def train(self, X, Y, iterations=5000, alpha=0.05):
+    def train(self, X, Y, iterations=5000, alpha=0.05):
         """trains the neuron and updates __W, __b, and __A"""
         if type(iterations) is not int:
             raise TypeError("iterations must be an integer")
