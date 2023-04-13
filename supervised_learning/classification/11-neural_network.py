@@ -58,17 +58,15 @@ class NeuralNetwork:
         self.__A1 = 1 / (1 + (np.exp(-z1)))
         z2 = np.matmul(self.W2, self.__A1) + self.b2
         self.__A2 = 1 / (1 + (np.exp(-z2)))
-
         return (self.A1, self.A2)
 
     def cost(self, Y, A):
         """calculates the cost of the model using logistic regression
-        In binary classification, the output layer has a single node 
-        that represents the probability of the positive class. 
-        Thus, the cost function is calculated based on the output of this node 
+        In binary classification, the output layer has a single node
+        that represents the probability of the positive class.
+        Thus, the cost function is calculated based on the output of this node
         (i.e., A) and the actual labels (i.e., Y)."""
         m = Y.shape[1]
         m_loss = np.sum((Y * np.log(A)) + ((1 - Y) * np.log(1.0000001 - A)))
         cost = (1 / m) * (-(m_loss))
-
         return (cost)
