@@ -77,7 +77,6 @@ class NeuralNetwork:
     def gradient_descent(self, X, Y, A1, A2, alpha=0.05):
         """calculates one pass of gradient descent on the neural network"""
         m = Y.shape[1]
-
         dz2 = (A2 - Y)
         d__W2 = (1 / m) * (np.matmul(dz2, A1.transpose()))
         d__b2 = (1 / m) * (np.sum(dz2, axis=1, keepdims=True))
@@ -90,7 +89,7 @@ class NeuralNetwork:
         self.__b1 = self.b1 - (alpha * d__b1)
 
     def train(self, X, Y, iterations=5000, alpha=0.05):
-        """trains the neuron and 
+        """trains the neuron and
         updates __W1, __b1, __A1, __W2, __b2, and __A2"""
         if type(iterations) is not int:
             raise TypeError("iterations must be an integer")
