@@ -90,7 +90,8 @@ class NeuralNetwork:
         self.__b1 = self.b1 - (alpha * d__b1)
 
     def train(self, X, Y, iterations=5000, alpha=0.05):
-        """trains the neuron and updates __W1, __b1, __A1, __W2, __b2, and __A2"""
+        """trains the neuron and 
+        updates __W1, __b1, __A1, __W2, __b2, and __A2"""
         if type(iterations) is not int:
             raise TypeError("iterations must be an integer")
         if iterations <= 0:
