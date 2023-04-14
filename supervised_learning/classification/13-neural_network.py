@@ -78,7 +78,8 @@ class NeuralNetwork:
         """calculates one pass of gradient descent on the neural network"""
         m = Y.shape[1]
         # the error or loss at the output layer (dz2)
-        # by taking the difference between the predicted output A2 and the actual labels Y
+        # by taking the difference between
+        #the predicted output A2 and the actual labels Y
         dz2 = (A2 - Y)
         # the gradient of the cost with respect to W2 (d__W2)
         # using the error dz2 and the output of the hidden layer A1.
@@ -92,7 +93,8 @@ class NeuralNetwork:
         d__W2 = (1 / m) * (np.matmul(dz2, A1.transpose()))
         # similarly, by taking the average of the errors over all examples.
         d__b2 = (1 / m) * (np.sum(dz2, axis=1, keepdims=True))
-        # the error or loss at the hidden layer (dz1) by taking the dot product of W2 and dz2
+        # the error or loss at the hidden layer (dz1)
+        #by taking the dot product of W2 and dz2
         # and element-wise multiplication of the result with A1 and (1 - A1).
         dz1 = (np.matmul(self.W2.transpose(), dz2)) * (A1 * (1 - A1))
         #  the gradient of the cost with respect to W1 (d__W1)
