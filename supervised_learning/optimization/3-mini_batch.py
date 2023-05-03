@@ -50,14 +50,18 @@ def train_mini_batch(X_train, Y_train, X_valid, Y_valid,
                 high = ((mini_batch + 1) * batch_size)
                 if high > m:
                     high = m
-                sess.run(train_op, feed_dict={x: X_train_s[low:high, :],y: Y_train_s[low:high, :]})
+                sess.run(train_op,
+                         feed_dict={x: X_train_s[low:high, :],
+                                    y: Y_train_s[low:high, :]})
                 step_number += 1
                 if (step_number % 100) is 0:
                     print("\tStep {}:".format(step_number))
                     step_cost = sess.run(loss,
-                                         feed_dict={x: X_train_s[low:high, :],y: Y_train_s[low:high, :]})
+                                         feed_dict={x: X_train_s[low:high, :],
+                                                    y: Y_train_s[low:high, :]})
                     print("\t\tCost: {}".format(step_cost))
                     step_accuracy = sess.run(accuracy,
-                                             feed_dict={x: X_train_s[low:high, :],y: Y_train_s[low:high, :]})
+                                             feed_dict={x: X_train_s[low:high, :],
+                                                        y: Y_train_s[low:high, :]})
                     print("\t\tAccuracy: {}".format(step_accuracy))
         return (saver.save(sess, save_path))
