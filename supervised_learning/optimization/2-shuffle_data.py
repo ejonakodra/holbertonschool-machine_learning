@@ -8,5 +8,4 @@ def shuffle_data(X, Y):
     permutation = np.random.permutation(m)
     X_shuffled = X[permutation]
     Y_shuffled = Y[permutation]
-
     return X_shuffled, Y_shuffled
