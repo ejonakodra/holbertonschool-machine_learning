@@ -3,6 +3,8 @@
 the RMSProp optimization algorithm"""
 
 
+import tensorflow as tf
+
 
 def create_RMSProp_op(loss, alpha, beta2, epsilon):
     """Creates the training operation for a neural network in TensorFlow
