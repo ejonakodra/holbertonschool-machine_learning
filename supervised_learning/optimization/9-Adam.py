@@ -2,6 +2,7 @@
 """Function that updates a variable in place
 using the Adam optimization algorithm"""
 
+
 def update_variables_Adam(alpha, beta1, beta2,
                           epsilon, var, grad, v, s, t):
     """Updates a variable in place using
