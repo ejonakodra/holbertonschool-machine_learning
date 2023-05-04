@@ -4,6 +4,8 @@ of a data set with bias correction"""
 
 
 def moving_average(data, beta):
+    """Calculates the weighted moving average of a data set
+    utilizing bias correction """
     v = 0
     EMA = []
     for i in range(len(data)):
