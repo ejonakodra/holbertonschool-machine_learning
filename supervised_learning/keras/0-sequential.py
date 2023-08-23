@@ -42,4 +42,3 @@ def build_model(nx, layers, activations, lambtha, keep_prob):
                                              kernel_regularizer=reg_l2))
     model = K.Sequential(sequential)
     return model
-    
