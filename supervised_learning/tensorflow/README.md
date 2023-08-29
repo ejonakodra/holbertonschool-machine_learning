@@ -1,0 +1,1 @@
+This directory contains initial work with TensorFlow and building a neural network with TensorFlow.
