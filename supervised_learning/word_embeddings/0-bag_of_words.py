@@ -3,7 +3,7 @@
 Defines function that creates a bag of words embedding matrix
 """
 
-
+import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
 
 
