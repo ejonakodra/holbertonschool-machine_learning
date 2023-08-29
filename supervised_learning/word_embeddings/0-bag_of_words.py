@@ -8,8 +8,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 
 
 def bag_of_words(sentences, vocab=None):
-    """
-    Creates a bag of words embedding matrix
+    """Creates a bag of words embedding matrix
 
     parameters:
         sentences [list]:
@@ -26,10 +25,12 @@ def bag_of_words(sentences, vocab=None):
                 s: number of sentences in sentences
                 f: number of features analyzed
             features [list]:
-                list of features used for embeddings
-    """
+                list of features used for embeddings"""
+    if vocab is None:
+        vocab = set(word for sentence in sentences for word in sentence.split())
+    
     vectorizer = CountVectorizer(vocabulary=vocab)
-    X_train_counts = vectorizer.fit_transform(sentences)
-    embeddings = X_train_counts.toarray()
+    embeddings = vectorizer.transform(sentences).toarray()
     features = vectorizer.get_feature_names()
+    
     return embeddings, features
