@@ -1,0 +1,1 @@
+This directory contains initial work with regularizing a neural network to avoid overfitting
