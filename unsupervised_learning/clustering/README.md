@@ -1,0 +1,1 @@
+This directory contains work with unsupervised learning clustering with scikit-learn and scipy
