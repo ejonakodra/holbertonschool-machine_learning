@@ -1,25 +1,19 @@
 #!/usr/bin/env python3
 """
-Defines a function to return two placeholders for the neural network
+Defines a function that creates the forward propagation graph
+for the neural network
 """
+import tensorflow.compat.v1 as tf
 
 
-import tensorflow as tf
-
-
-def create_placeholders(nx, classes):
+def forward_prop(x, layer_sizes=[], activations=[]):
     """
-    Returns two placeholders, x and y, for the neural network
-    x is the placeholder for input data to the neural network
-    y is the placeholder for the one-hot labels for the input data
-
-    parameters:
-        nx [int]: the number of feature columns in the data
-        classes [int]: the number of classes in the classifier
-
-    returns:
-        the placeholders, x and y, respectively
+    Creates the forward propagation graph for the neural network
     """
-    x = tf.placeholder("float", shape=(None, nx), name="x")
-    y = tf.placeholder("float", shape=(None, classes), name="y")
-    return x, y
+    create_layer = __import__('1-create_layer').create_layer
+    for i in range(len(layer_sizes)):
+        if i is 0:
+            output = create_layer(x, layer_sizes[i], activations[i])
+        else:
+            output = create_layer(output, layer_sizes[i], activations[i])
+    return output
