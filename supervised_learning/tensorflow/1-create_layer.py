@@ -4,7 +4,7 @@ Defines a function to create a layer for neural network
 """
 
 
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 
 def create_layer(prev, n, activation):
