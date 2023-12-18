@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """A function that builds a modified version
 of the LeNet-5 architecture using tensorflow"""
-import tensorflow.compat.v1 as tf
+import tensorflow as tf
+
 
 def lenet5(x, y):
     """A function that builds a modified version of the
