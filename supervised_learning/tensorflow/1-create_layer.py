@@ -9,25 +9,25 @@ import tensorflow.compat.v1 as tf
 
 def create_layer(prev, n, activation):
     """
-    Creates a layer for neural network
+    Creates a layer for the neural network.
 
-    parameters:
-        prev [tensor]: tensor output of the previous layer
-        n [int]: the number of nodes in the layer to create
-        activation [function]: the activation function the layer should use
+    Arguments:
+    prev -- tensor output of the previous layer
+    n -- integer, number of nodes in the layer to create
+    activation -- activation function that the layer should use
 
-    use tf.contrib.layers.variance_scaling_initializer(mode="FAN_AVG")
-        to implement He et. al initialization for the layer weights
-    each layer is given the name "layer"
-
-    returns:
-        tensor output of the layer
+    Returns:
+    tensor output of the layer
     """
-    weights_initializer = tf.contrib.layers.variance_scaling_initializer(
-        mode="FAN_AVG")
-    layer = tf.layers.Dense(
-        n,
-        activation=activation,
-        name="layer",
-        kernel_initializer=weights_initializer)
-    return (layer(prev))
+    initializer = tf.contrib.layers.\
+        variance_scaling_initializer(mode="FAN_AVG")
+    W = tf.Variable(initializer([prev.shape[1].value, n]), name='W')
+    b = tf.Variable(tf.zeros([n]), name='b')
+    Z = tf.matmul(prev, W) + b
+
+    if activation is not None:
+        A = activation(Z)
+    else:
+        A = Z
+
+    return A
