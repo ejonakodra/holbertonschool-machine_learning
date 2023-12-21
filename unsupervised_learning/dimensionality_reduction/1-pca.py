@@ -1,32 +1,23 @@
 #!/usr/bin/env python3
-"""
-Defines function that performs principal components analysis (PCA) on dataset
-"""
-
-
+"""A function that performs PCA on a dataset"""
 import numpy as np
 
 
 def pca(X, ndim):
     """
-    Performs principal components analysis (PCA) on a dataset
-
-    parameters:
-        X [numpy.ndarray of shape (n, d)]: dataset
-            n: number of data points
-            d: number of dimensions in each data point
-        ndim [int]: the new dimensionality of the transformed X
-
-    returns:
-        T [numpy.ndarray of shape (n, ndim)]:
-            containing the transformed version of X
-            n: number of data points
-            ndim: the new dimensionality of the transformed X
+    a function that performs PCA on a dataset
+    X: numpy.ndarray of shape (n, d) where:
+        n is the number of data points
+        d is the number of dimensions in each point
+    ndim: the new dimensionality of the transformed X
+    return: T, a numpy.ndarray of shape (n, ndim) containing the transformed
+    version of X
     """
-    # n, d = X.shape
-    mean = np.mean(X, axis=0, keepdims=True)
-    A = X - mean
-    u, s, v = np.linalg.svd(A)
-    W = v.T[:, :ndim]
-    T = np.matmul(A, W)
-    return (T)
+    X_mean = X - X.mean(axis=0)
+    u, s, vh = np.linalg.svd(X_mean)
+
+    W = vh.T
+    Wr = W[:, 0:ndim]
+    T = X_mean @ Wr
+
+    return T
